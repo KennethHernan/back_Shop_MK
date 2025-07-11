@@ -3,6 +3,7 @@ import cors from "cors"
 import morgan from "morgan";
 import cookieParser from 'cookie-parser';
 import productoRoutes from "./product.js";
+import { connectDB } from '../utils/database.js';
 const app = express();
 
 
@@ -19,6 +20,14 @@ morgan.token('body', (req, res) => {
     }
     return '-';
 })
+
+(async () => {
+  try {
+    await connectDB();
+  } catch (e) {
+    console.error('Error al conectar la base de datos en app.js');
+  }
+})();
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
 
