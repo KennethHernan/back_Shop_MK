@@ -24,6 +24,7 @@ morgan.token('body', (req, res) => {
 (async () => {
   try {
     await connectDB();
+    console.error('Conectado');
   } catch (e) {
     console.error('Error al conectar la base de datos en app.js');
   }
