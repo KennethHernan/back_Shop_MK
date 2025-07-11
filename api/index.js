@@ -1,4 +1,5 @@
 import app from '../src/api/app.js';
-import { expressToHandler } from 'vercel-express';
 
-export default expressToHandler(app);
+export default function handler(req, res) {
+  return app(req, res);
+}
