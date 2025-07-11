@@ -1,6 +1,5 @@
 import http from 'http';
 import app from '../api/app.js';
-import db from "../utils/database.js"
 
 const PORT = 5000;
 

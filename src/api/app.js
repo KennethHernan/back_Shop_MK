@@ -14,12 +14,9 @@ app.use(cors({
     origin: "*",
     methods: ['GET', 'POST', 'OPTIONS', 'HEAD', 'CONNECT'],
 }));
-morgan.token('body', (req, res) => {
-    if (res._body) {
-        return JSON.stringify(res._body);
-    }
-    return '-';
-})
+
+morgan.token('body', (req) => JSON.stringify(req.body));
+
 
 (async () => {
   try {

@@ -8,12 +8,7 @@ export async function connectDB() {
 
   try {
     const db = await mongoose.connect(
-      'mongodb+srv://Kenneth:Kenneth2829@mayikh-style.n0wg4b0.mongodb.net/DB_Mayikh',
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        serverSelectionTimeoutMS: 10000, // optional, para ajustar tiempo de espera
-      }
+      'mongodb+srv://Kenneth:Kenneth2829@mayikh-style.n0wg4b0.mongodb.net/DB_Mayikh'
     );
 
     isConnected = true;
