@@ -3,6 +3,8 @@ import cors from "cors"
 import morgan from "morgan";
 import cookieParser from 'cookie-parser';
 import productoRoutes from "./product.js";
+import categoryRoutes from './category.js';
+
 const app = express();
 
 
@@ -19,6 +21,8 @@ morgan.token('body', (req) => JSON.stringify(req.body));
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
 
 app.use("/api", productoRoutes);
+app.use("/api/category", categoryRoutes);
+
 
 app.get("/", (req, res) => {
     res.json({
